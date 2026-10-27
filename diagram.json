@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Masa Atallah",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 6.6, "left": -16.4, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -148.76, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -57.3, "left": 148.2, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "bb1:17t.a", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:18t.a", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:19t.a", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:20t.a", "", [ "$bb" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v-28.8", "h-307.2" ] ],
+    [ "dht1:GND", "bb1:bn.16", "black", [ "v144" ] ],
+    [ "bb1:bn.2", "esp:GND.1", "black", [ "v-49.3", "h-171.2" ] ],
+    [ "dht1:SDA", "esp:15", "green", [ "v115.2", "h-220.7" ] ]
+  ],
+  "dependencies": {}
+}
